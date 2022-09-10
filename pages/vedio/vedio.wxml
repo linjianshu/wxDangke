@@ -1,0 +1,28 @@
+<!--pages/vedio/vedio.wxml-->
+
+<view class="body">
+  <view class="item" wx:for="{{vedioList}}" wx:key="VedioId">
+  <view class="user-info">
+    <image src="/resource/userheaders/user1.jpg" ></image>
+    <text class="user-name">{{item.title}}</text>
+  </view>
+  <view class="title">
+    <block><text>{{item.remark}}</text></block>
+  </view>
+  <view class="content" objectFit="fill">
+    <block>
+    <video src="{{item.inUrl}}" data-text="{{item.inUrl}}" catchtap="vedioOnclick"></video>
+  </block> 
+</view>
+  </view>
+</view>
+
+<block wx:if="{{canIUseOpenData}}" class="userinfo-opendata">
+  <view class="userinfo-avatar" bindtap="bindViewTap" >
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data hidden="true" type="userNickName" data-userNickName=""></open-data>
+</block>
+
+<view hidden="true">{{userInfo.data.userNickName}}</view>
+<button open-type='getUserInfo'  lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>

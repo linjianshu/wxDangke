@@ -1,0 +1,48 @@
+<view class="head"><input type="text" placeholder="请输入要搜索的内容"></input></view>
+<!-- <view class="type-pad"> -->
+  <!-- <block wx:for="{{topBars}}" wx:key="name"> -->
+  <!-- <text class= "{{selectTypeIndex==item.id?'selected':''}}" bindtap="selectBar" data-id="{{item.id}}">{{item.name}}</text> -->
+  <!-- </block> -->
+<!-- </view> -->
+
+
+<view class="body">
+  <view class="item" wx:for="{{RecentThing}}" wx:key="RecentThingId">
+  <view class="user-info">
+    <image src="/resource/userheaders/user1.jpg" ></image>
+    <text class="user-name">{{item.wxId}}</text>
+  </view>
+  <view class="title">
+    <block><text>{{item.comment}}</text></block>
+  </view>
+  <view class="content" objectFit="fill">
+    <block>
+    <video src="{{item.exUrl}}"></video>
+  </block> 
+</view>
+  </view>
+</view>
+
+
+<view class="body">
+  <view class="item" wx:for="{{newsList}}" wx:key="id">
+  <view class="user-info">
+    <image src="/resource/userheaders/user1.jpg" ></image>
+    <text class="user-name">{{item.userName}}</text>
+    <text class="focus {{item.isFocus?'':'no-focus'}}">
+      <block wx:if="{{!item.isFocus}}">关注</block>
+      <block wx:else>已关注</block>
+    </text>
+  </view>
+  <view class="title">
+    <block wx:if="{{item.isVedio}}"><text>{{item.newsTitle}}</text></block>
+    <block wx:else><text>{{item.newsAbstract}}</text></block>
+  </view>
+  <view class="content" objectFit="fill">
+    <block wx:if="{{item.isVedio}}"><video src="{{item.videoUrl}}"></video></block>
+    <block wx:else><image mode="widthFix" src="{{item.imageUrl}}"></image></block>
+  </view>
+  </view>
+</view>
+
+

@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/newsList/newsList" , 
+    "pages/test/test1",
+    "pages/index/index",
+    "pages/logs/logs" , 
+    "pages/vedio/vedio"
+  ],
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#1296db",
+    "list": [{
+      "pagePath": "pages/newsList/newsList",
+      "text": "动态"
+    },
+    {
+      "pagePath": "pages/vedio/vedio",
+      "text": "学习"
+    },
+    {
+      "pagePath": "pages/newsList/newsList",
+      "text": "我的"
+    }
+  ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "HFUT",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
